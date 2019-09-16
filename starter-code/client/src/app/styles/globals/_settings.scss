@@ -1,0 +1,37 @@
+//FONTS
+@import url("https://fonts.googleapis.com/css?family=Oxygen&display=swap");
+
+//COLORS
+$colors: (
+  text: #040f3d,
+  background: #c6c4c5,
+  important: #4bffa5
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+//VARIABLES
+$family-font: "Oxygen", sans-serif;
+$hoverTransition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+* > {
+  box-sizing: border-box;
+}
+
+a {
+  color: color(text);
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  color: color(text);
+  background: none;
+  border: 0;
+  padding: 0;
+  &:focus {
+    outline: 0;
+  }
+}
