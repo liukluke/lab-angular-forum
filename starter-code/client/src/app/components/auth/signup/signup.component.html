@@ -1,1 +1,14 @@
-<p>signup works!</p>
+<div class="form-container">
+    <h2>signup</h2>
+    <form ngNativeValidate>
+        <ul>
+            <li><label for="username">username</label><br />
+                <input type="text" name="username" [(ngModel)]="newSignupInput.username" required /></li>
+            <li><label for="email">email</label><br />
+                <input type="email" name="email" [(ngModel)]="newSignupInput.email" required /></li>
+            <li><label for="password">password</label><br />
+                <input type="password" name="password" [(ngModel)]="newSignupInput.password" required /></li>
+            <li><button (click)="signup()">create</button></li>
+        </ul>
+    </form>
+</div>
