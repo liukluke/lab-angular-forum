@@ -1,1 +1,12 @@
-<p>login works!</p>
+<div class="form-container">
+    <h2>login</h2>
+    <form ngNativeValidate>
+        <ul>
+            <li><label for="username">username</label><br />
+                <input type="text" name="username" [(ngModel)]="newLoginInput.username" required /></li>
+            <li><label for="password">password</label><br />
+                <input type="password" name="password" [(ngModel)]="newLoginInput.password" required /></li>
+            <li><button (click)="login()">login</button></li>
+        </ul>
+    </form>
+</div>
