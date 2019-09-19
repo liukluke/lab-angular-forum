@@ -21,4 +21,19 @@ export class ThreadsService {
       );
   }
 
+  getThreads(): Observable<any> {
+    return this.httpClient.get(`${environment.BASE_URL}/threads/`)
+      .pipe(
+        map((data: any) => data),
+        catchError(this.handleError)
+      );
+  }
+
+  getSigleThread(id: any): Observable<any> {
+    return this.httpClient.get(`${environment.BASE_URL}/threads/${id}`)
+      .pipe(
+        map((data: any) => data),
+        catchError(this.handleError)
+      );
+  }
 }

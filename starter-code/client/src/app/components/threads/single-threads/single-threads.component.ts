@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { ThreadsService } from './../../../services/threads.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-single-threads',
   templateUrl: './single-threads.component.html',
-  styleUrls: ['./single-threads.component.scss']
+  styleUrls: ['./../../../styles/style.scss']
 })
 export class SingleThreadsComponent implements OnInit {
+  thread: object;
+  error: string;
+  constructor(
+    private route: ActivatedRoute,
+    private threadsService: ThreadsService
+  ) { }
 
-  constructor() { }
+  ngOnInit(): void {
+    this.route.params.subscribe(params => this.getSigleThread(params['id']), (err: string) => this.error = err);
+  }
 
-  ngOnInit() {
+  getSigleThread(id: any): void {
+    this.threadsService.getSigleThread(id)
+      .subscribe((thread: object) => this.thread = thread, (err: string) => this.error = err);
   }
 
 }

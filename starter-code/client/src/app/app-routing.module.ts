@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'thread/new', component: NewThreadsComponent },
-  { path: 'single', component: SingleThreadsComponent },
+  { path: 'thread/:id', component: SingleThreadsComponent },
   { path: '', component: AllThreadsComponent },
   { path: '**', redirectTo: '' }
 ];

@@ -1,1 +1,15 @@
-<p>single-threads works!</p>
+<div *ngIf="thread; else loading">
+    <h1> thread details </h1>
+    <a [routerLink]="['']"> Back to list </a>
+
+    <div class="journal-info">
+        <h2> {{ thread.title }}&nbsp;</h2>
+        <h3> {{thread.date | date:'short'}} </h3>
+        <p> {{ thread.content }} </p>
+        <p> {{ thread.author.username }} </p>
+        <p> {{ thread.author.email }} </p>
+    </div>
+</div>
+<ng-template #loading>
+    <h1>LOADING...</h1>
+</ng-template>

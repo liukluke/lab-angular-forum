@@ -1,1 +1,14 @@
-<p>all-threads works!</p>
+<div *ngIf="threads; else loading">
+    <h1> all threads </h1>
+    <div>
+        <div *ngFor="let thread of threads">
+            <h3> {{ thread.title }}&nbsp;</h3>
+            <p> {{ thread.author.username }} </p>
+            <p> {{thread.date | date:'short'}} </p>
+            <a [routerLink]="['thread', thread._id]"> View Details </a>
+        </div>
+    </div>
+</div>
+<ng-template #loading>
+    <h1>LOADING...</h1>
+</ng-template>
