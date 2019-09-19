@@ -1,12 +1,17 @@
 <div class="form-container">
-    <h2>login</h2>
-    <form ngNativeValidate>
-        <ul>
-            <li><label for="username">username</label><br />
-                <input type="text" name="username" [(ngModel)]="newLoginInput.username" required /></li>
-            <li><label for="password">password</label><br />
-                <input type="password" name="password" [(ngModel)]="newLoginInput.password" required /></li>
-            <li><button (click)="login()">login</button></li>
-        </ul>
-    </form>
+    <div class="__left-side"></div>
+    <div class="__right-side">
+        <div class="form">
+            <h2>login</h2>
+            <form ngNativeValidate>
+                <ul>
+                    <li><input type="text" name="username" [(ngModel)]="newLoginInput.username" placeholder="username"
+                            required /></li>
+                    <li><input type="password" name="password" [(ngModel)]="newLoginInput.password"
+                            placeholder="password" required /></li>
+                    <li><button (click)="login()">login</button></li>
+                </ul>
+            </form>
+        </div>
+    </div>
 </div>

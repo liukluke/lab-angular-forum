@@ -3,9 +3,19 @@
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 
-nav a {
+h3 {
+  font-size: 1.5rem;
+}
+
+nav a,
+nav button {
+  font-size: 1.1rem;
+}
+
+form input,
+form button {
   font-size: 1.1rem;
 }

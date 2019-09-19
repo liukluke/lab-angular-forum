@@ -10,6 +10,8 @@ import { SingleThreadsComponent } from './components/threads/single-threads/sing
 const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'new', component: NewThreadsComponent },
+  { path: 'single', component: SingleThreadsComponent },
   { path: '', component: AllThreadsComponent },
   { path: '**', redirectTo: '' }
 ];

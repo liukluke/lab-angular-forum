@@ -7,16 +7,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-transform: capitalize;
+    text-transform: $transform-text;
     color: color(text);
     nav ul {
       display: grid;
       grid-auto-flow: column;
       grid-gap: 20px;
+      li {
+        display: flex;
+        align-items: center;
+      }
       a {
         &:hover {
           color: color(important);
         }
+      }
+      button {
+        text-transform: $transform-text;
       }
     }
   }
