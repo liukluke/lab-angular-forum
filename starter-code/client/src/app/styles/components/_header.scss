@@ -24,6 +24,9 @@
       }
       button {
         text-transform: $transform-text;
+        &:hover {
+          color: color(important);
+        }
       }
     }
   }

@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 
 import { AuthService } from './services/auth.service';
+import { ThreadsService } from './services/threads.service';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -31,7 +32,7 @@ import { SingleThreadsComponent } from './components/threads/single-threads/sing
     HttpClientModule,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, ThreadsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

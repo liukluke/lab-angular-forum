@@ -1,1 +1,16 @@
-<p>new-threads works!</p>
+<div class="form-container">
+    <div class="__left-side"></div>
+    <div class="__right-side">
+        <div class="form">
+            <h2>new thread</h2>
+            <form ngNativeValidate>
+                <ul>
+                    <li><input type="text" name="title" placeholder="title" [(ngModel)]="newThreadInput.title"
+                            required /></li>
+                    <li><textarea rows="5" name="content" placeholder="content" [(ngModel)]="newThreadInput.content"
+                            required></textarea></li>
+                    <li><button (click)="newThread()">create</button></li>
+                </ul>
+            </form>
+        </div>
+    </div>

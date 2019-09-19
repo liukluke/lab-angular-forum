@@ -3,13 +3,13 @@
         <h3><a [routerLink]="['']">angular forum</a></h3>
         <nav>
             <ul *ngIf="isUserLoggedIn; else elseBlock">
-                <li><a [routerLink]="['login']">new thread</a></li>
+                <li><a [routerLink]="['thread/new']" routerLinkActive="active-link">new thread</a></li>
                 <li id="btn-logout"><button (click)="logout()">logout</button></li>
             </ul>
             <ng-template #elseBlock>
                 <ul>
-                    <li><a [routerLink]="['login']">login</a></li>
-                    <li><a [routerLink]="['signup']">signup</a></li>
+                    <li><a [routerLink]="['login']" routerLinkActive="active-link">login</a></li>
+                    <li><a [routerLink]="['signup']" routerLinkActive="active-link">signup</a></li>
                 </ul>
             </ng-template>
         </nav>

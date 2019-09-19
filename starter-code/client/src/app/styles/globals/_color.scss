@@ -1,0 +1,12 @@
+$colors: (
+  text: #040f3d,
+  placeholder: rgba(4, 15, 61, 0.5),
+  background: #c6c4c5,
+  important: #4bffa5,
+  darkImportant: darken(#4bffa5, 10%),
+  light: #ffffff
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}

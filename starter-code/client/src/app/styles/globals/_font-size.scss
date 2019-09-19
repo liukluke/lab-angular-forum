@@ -1,3 +1,7 @@
+// FONTS
+@import url("https://fonts.googleapis.com/css?family=Oxygen&display=swap");
+
+// FONTS-SIZE
 .main-container {
   font-size: 10px;
 }
@@ -16,6 +20,7 @@ nav button {
 }
 
 form input,
-form button {
+form button,
+form textarea {
   font-size: 1.1rem;
 }
