@@ -2,12 +2,15 @@
     <h1> thread details </h1>
     <a [routerLink]="['']"> Back to list </a>
 
-    <div class="journal-info">
+    <div class="thread-info">
         <h2> {{ thread.title }}&nbsp;</h2>
         <h3> {{thread.date | date:'short'}} </h3>
         <p> {{ thread.content }} </p>
         <p> {{ thread.author.username }} </p>
         <p> {{ thread.author.email }} </p>
+    </div>
+    <div *ngIf="!!user" class="new-reply">
+        <p>hola</p>
     </div>
 </div>
 <ng-template #loading>

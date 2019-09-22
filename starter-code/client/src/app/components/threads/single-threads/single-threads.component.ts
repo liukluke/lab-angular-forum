@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThreadsService } from './../../../services/threads.service';
+import { AuthService } from './../../../services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,19 +10,34 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SingleThreadsComponent implements OnInit {
   thread: object;
+  user: object;
   error: string;
   constructor(
     private route: ActivatedRoute,
+    private session: AuthService,
     private threadsService: ThreadsService
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => this.getSigleThread(params['id']), (err: string) => this.error = err);
+    this.session.isLoggedIn()
+      .subscribe((user: object) => this.successCb(user), (err: string) => this.errorCb(err));
+    this.route.params
+      .subscribe(params => this.getSigleThread(params['id']), (err: string) => this.error = err);
   }
 
   getSigleThread(id: any): void {
     this.threadsService.getSigleThread(id)
       .subscribe((thread: object) => this.thread = thread, (err: string) => this.error = err);
+  }
+
+  errorCb(err: string): void {
+    this.error = err;
+    this.user = null;
+  }
+
+  successCb(user: object): void {
+    this.user = user;
+    this.error = null;
   }
 
 }

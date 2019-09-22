@@ -22,8 +22,7 @@ export class NewThreadsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.session.isLoggedIn()
-      .subscribe((user: any) => this.successCb(user), (err: any) => this.errorCb(err));
+    this.session.isLoggedIn().subscribe((user: any) => this.successCb(user), (err: any) => this.errorCb(err));
   }
 
   errorCb(err: any): void {

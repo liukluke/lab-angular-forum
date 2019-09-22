@@ -24,7 +24,7 @@
         button,
         input,
         textarea {
-          box-sizing: border-box;
+          border: $border color(important);
           padding: 7px 15px;
           width: 100%;
           border-radius: $radius;

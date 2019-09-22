@@ -1,0 +1,16 @@
+.threads-container {
+  ul {
+    border: $border color(text);
+    border-radius: $radius;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    // .threads-list {
+    //   a  {
+    //     padding: 3px;
+    //     background-color: color(important);
+    //     outline: 1px solid red;
+    //   }
+    // }
+  }
+}
