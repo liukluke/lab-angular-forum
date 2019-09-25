@@ -7,6 +7,18 @@ a {
   text-decoration: none;
 }
 
+.threads-list a,
+.thread-info a {
+  background-color: color(text);
+  color: color(important);
+  padding: 5px 10px;
+  border-radius: $radius;
+  &:hover {
+    background-color: color(important);
+    color: color(text);
+  }
+}
+
 button {
   cursor: pointer;
   color: color(text);

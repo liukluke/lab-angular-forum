@@ -4,7 +4,7 @@
   display: grid;
   grid-template: calc(100vh - 90px) / repeat(2, 1fr);
   grid-gap: 20px;
-  margin-top: 20px;
+  margin-top: $margin;
   .__left-side {
     background-color: color(important);
     border-radius: $radius;
@@ -14,7 +14,7 @@
     align-items: center;
     .form {
       h2 {
-        margin-bottom: 20px;
+        margin-bottom: $margin;
       }
       ul {
         width: 100%;
@@ -24,19 +24,20 @@
         button,
         input,
         textarea {
-          border: $border color(important);
+          box-sizing: border-box;
           padding: 7px 15px;
           width: 100%;
           border-radius: $radius;
         }
         input,
         textarea {
-          border: 1px solid color(important);
+          border: $border color(important);
           &::placeholder {
             color: color(placeholder);
           }
         }
         button {
+          border: $border color(text);
           text-transform: $transform-text;
           background-color: color(text);
           color: color(light);

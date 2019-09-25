@@ -3,10 +3,14 @@
     <div class="threads-list">
         <ul *ngFor="let thread of threads">
             <li>
-                <h3> title: {{ thread.title }}</h3>
+                <p><span>title:</span> {{ thread.title }}</p>
             </li>
-            <li>author: <span>{{ thread.author.username }}</span></li>
-            <li>date: <span>{{thread.date | date:'short'}}</span></li>
+            <li>
+                <p><span>author:</span> {{ thread.author.username }}</p>
+            </li>
+            <li>
+                <p><span>date:</span> {{thread.date | date:'short'}}</p>
+            </li>
             <li><a [routerLink]="['thread', thread._id]">info</a></li>
         </ul>
     </div>

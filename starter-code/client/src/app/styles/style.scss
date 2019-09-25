@@ -1,6 +1,6 @@
 //GLOBALS
 @import "globals/font-size";
-@import "globals/color";
+@import "globals/colors";
 @import "globals/variables";
 @import "globals/settings";
 
@@ -10,6 +10,7 @@
 
 //VIEW
 @import "view/all-threads";
+@import "view/single-thread";
 
 //COMPONENTS
 @import "components/header";

@@ -1,16 +1,41 @@
 .threads-container {
-  ul {
-    border: $border color(text);
-    border-radius: $radius;
+  text-transform: $transform-text;
+  h1 {
+    margin: $margin 0;
+  }
+  .threads-list {
     display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
-    // .threads-list {
-    //   a  {
-    //     padding: 3px;
-    //     background-color: color(important);
-    //     outline: 1px solid red;
-    //   }
-    // }
+    grid-gap: 8px;
+    grid-auto-rows: 40px;
+    color: color(text);
+    ul {
+      padding: 0 15px;
+      border: $border color(placeholder);
+      border-radius: $radius;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+      li {
+        align-items: center;
+        display: flex;
+        &:first-child {
+          grid-column: span 2;
+        }
+        &:last-child {
+          text-transform: uppercase;
+          justify-self: flex-end;
+          a {
+            background-color: color(text);
+            color: color(important);
+            padding: 5px 10px;
+            border-radius: $radius;
+            &:hover{
+              background-color: color(important);
+              color: color(text);
+            }
+          }
+        }
+      }
+    }
   }
 }

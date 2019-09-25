@@ -1,0 +1,21 @@
+.thread-info {
+  i {
+    margin-top: $margin;
+  }
+  h2 {
+    margin: $margin 0;
+  }
+  .thread-content {
+    margin: 20px 0;
+    text-align: justify;
+    line-height: 1.4rem;
+  }
+  ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    li:nth-child(-n + 2) {
+      text-transform: $transform-text;
+    }
+  }
+}

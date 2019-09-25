@@ -1,16 +1,32 @@
-<div *ngIf="thread; else loading">
-    <h1> thread details </h1>
-    <a [routerLink]="['']"> Back to list </a>
-
+<div class="single-thread-container" *ngIf="thread; else loading">
     <div class="thread-info">
-        <h2> {{ thread.title }}&nbsp;</h2>
-        <h3> {{thread.date | date:'short'}} </h3>
-        <p> {{ thread.content }} </p>
-        <p> {{ thread.author.username }} </p>
-        <p> {{ thread.author.email }} </p>
+        <a [routerLink]="['']"><i class="fas fa-long-arrow-alt-left"></i> Back to list </a>
+        <h2>{{ thread.title }}</h2>
+        <p class="thread-content"> {{ thread.content }} </p>
+        <ul>
+            <li>
+                <p><span>date: </span> {{thread.date | date:'short'}} </p>
+            </li>
+            <li>
+                <p><span>author: </span> {{ thread.author.username }}</p>
+            </li>
+            <li>
+                <p><span>email: </span> {{ thread.author.email }} </p>
+            </li>
+        </ul>
+        <ul *ngFor="let reply of thread.replies">
+            <li>{{reply.author.username}}</li>
+            <li>{{reply.title}}</li>
+            <li>{{reply.content}}</li>
+        </ul>
     </div>
     <div *ngIf="!!user" class="new-reply">
-        <p>hola</p>
+        <form ngNativeValidate>
+            <input type="text" name="title" placeholder="title" [(ngModel)]="newReplyInput.title" required />
+            <textarea rows="5" name="content" placeholder="content" [(ngModel)]="newReplyInput.content"
+                required></textarea>
+            <button (click)="newReply()">create</button>
+        </form>
     </div>
 </div>
 <ng-template #loading>

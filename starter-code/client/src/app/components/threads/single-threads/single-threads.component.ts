@@ -12,6 +12,11 @@ export class SingleThreadsComponent implements OnInit {
   thread: object;
   user: object;
   error: string;
+  pageid: string;
+  newReplyInput: object = {
+    title: '',
+    content: ''
+  };
   constructor(
     private route: ActivatedRoute,
     private session: AuthService,
@@ -22,12 +27,23 @@ export class SingleThreadsComponent implements OnInit {
     this.session.isLoggedIn()
       .subscribe((user: object) => this.successCb(user), (err: string) => this.errorCb(err));
     this.route.params
-      .subscribe(params => this.getSigleThread(params['id']), (err: string) => this.error = err);
+      .subscribe(params => {
+        this.getSigleThread(params['id'])
+        this.pageid = params['id']
+      }, (err: string) => this.error = err);
   }
 
   getSigleThread(id: any): void {
     this.threadsService.getSigleThread(id)
       .subscribe((thread: object) => this.thread = thread, (err: string) => this.error = err);
+  }
+
+  newReply(): void {
+    this.threadsService.newReply(this.pageid, this.newReplyInput)
+      .subscribe((thread: object) => {
+        this.thread = thread;
+        this.newReplyInput = {}
+      }, (err: any) => this.error = err);
   }
 
   errorCb(err: string): void {
@@ -37,7 +53,10 @@ export class SingleThreadsComponent implements OnInit {
 
   successCb(user: object): void {
     this.user = user;
+    this.newReply['author'] = user;
     this.error = null;
   }
 
 }
+
+

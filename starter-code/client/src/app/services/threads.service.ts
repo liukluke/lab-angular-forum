@@ -21,6 +21,14 @@ export class ThreadsService {
       );
   }
 
+  newReply(pageId: string, reply: object): Observable<HttpClient> {
+    return this.httpClient.post(`${environment.BASE_URL}/threads/${pageId}/replies`, reply, this.options)
+      .pipe(
+        map((data: any) => data),
+        catchError(this.handleError)
+      );
+  }
+
   getThreads(): Observable<any> {
     return this.httpClient.get(`${environment.BASE_URL}/threads/`)
       .pipe(
