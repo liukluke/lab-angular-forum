@@ -14,13 +14,10 @@
       border-radius: $radius;
       display: grid;
       grid-auto-flow: column;
-      grid-auto-columns: 1fr;
+      grid-auto-columns: 3fr 2fr 3fr 1fr;
       li {
         align-items: center;
         display: flex;
-        &:first-child {
-          grid-column: span 2;
-        }
         &:last-child {
           text-transform: uppercase;
           justify-self: flex-end;
@@ -29,7 +26,7 @@
             color: color(important);
             padding: 5px 10px;
             border-radius: $radius;
-            &:hover{
+            &:hover {
               background-color: color(important);
               color: color(text);
             }

@@ -3,7 +3,7 @@
         <a [routerLink]="['']"><i class="fas fa-long-arrow-alt-left"></i> Back to list </a>
         <h2>{{ thread.title }}</h2>
         <p class="thread-content"> {{ thread.content }} </p>
-        <ul>
+        <ul class="thread-info">
             <li>
                 <p><span>date: </span> {{thread.date | date:'short'}} </p>
             </li>
@@ -14,7 +14,7 @@
                 <p><span>email: </span> {{ thread.author.email }} </p>
             </li>
         </ul>
-        <ul *ngFor="let reply of thread.replies">
+        <ul *ngFor="let reply of thread.replies" class="reply-info">
             <li>{{reply.author.username}}</li>
             <li>{{reply.title}}</li>
             <li>{{reply.content}}</li>
