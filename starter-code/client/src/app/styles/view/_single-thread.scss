@@ -5,20 +5,51 @@
   h2 {
     margin: $margin 0;
   }
+  h4 {
+    margin: 20px 0;
+  }
   .thread-content {
     margin: 20px 0;
     text-align: justify;
     line-height: 1.4rem;
   }
-  .thread-info {
+  .thread-info-card {
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: $border color(backgroundLight); 
     li:nth-child(-n + 2) {
       text-transform: $transform-text;
     }
   }
-  // .reply-info {
+  .reply {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    text-transform: $transform-text;
+    max-height: 290px;
+    overflow-x: scroll;
+    margin-bottom: 20px;
+    ul {
+      padding: 15px;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      background-color: color(backgroundLight);
+      border-radius: $radius;
+      .reply-content {
+        grid-column: span 2;
+      }
+      .reply-date {
+        grid-column: span 2;
+        justify-self: end;
+      }
+    }
+  }
+  .new-reply {
+    margin-bottom: 20px; 
+    border-top: $border color(backgroundLight);  
+  }
 
-  // }
 }

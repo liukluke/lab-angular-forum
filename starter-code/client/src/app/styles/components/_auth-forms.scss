@@ -12,41 +12,42 @@
   .__right-side {
     display: grid;
     align-items: center;
-    .form {
-      h2 {
-        margin-bottom: $margin;
+  }
+}
+
+.form {
+  h2 {
+    margin-bottom: $margin;
+  }
+  ul {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 10px;
+    button,
+    input,
+    textarea {
+      box-sizing: border-box;
+      padding: 7px 15px;
+      width: 100%;
+      border-radius: $radius;
+    }
+    input,
+    textarea {
+      border: $border color(important);
+      &::placeholder {
+        color: color(placeholder);
       }
-      ul {
-        width: 100%;
-        display: grid;
-        grid-auto-flow: row;
-        grid-gap: 10px;
-        button,
-        input,
-        textarea {
-          box-sizing: border-box;
-          padding: 7px 15px;
-          width: 100%;
-          border-radius: $radius;
-        }
-        input,
-        textarea {
-          border: $border color(important);
-          &::placeholder {
-            color: color(placeholder);
-          }
-        }
-        button {
-          border: $border color(text);
-          text-transform: $transform-text;
-          background-color: color(text);
-          color: color(light);
-          transition: $hoverTransition;
-          &:active {
-            background-color: color(darkImportant);
-            color: color(text);
-          }
-        }
+    }
+    button {
+      border: $border color(text);
+      text-transform: $transform-text;
+      background-color: color(text);
+      color: color(light);
+      transition: $hoverTransition;
+      &:active {
+        background-color: color(darkImportant);
+        color: color(text);
       }
     }
   }
